@@ -45,5 +45,42 @@ namespace Game
             pictureBox1.Left += moveX;
             pictureBox1.Top += moveY;
         }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Up)
+            {
+                moveY = -speed;
+            }else if(e.KeyCode == Keys.Down)
+            {
+                moveY = speed;
+            }else if(e.KeyCode == Keys.Right)
+            {
+                moveX = speed;
+            }else if(e.KeyCode == Keys.Left)
+            {
+                moveX = -speed;
+            }
+        }
+
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up)
+            {
+                moveY = 0;
+            }
+            else if (e.KeyCode == Keys.Down)
+            {
+                moveY = 0;
+            }
+            else if (e.KeyCode == Keys.Right)
+            {
+                moveX = 0;
+            }
+            else if (e.KeyCode == Keys.Left)
+            {
+                moveX = 0;
+            }
+        }
     }
 }
